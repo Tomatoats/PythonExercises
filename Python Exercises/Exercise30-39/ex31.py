@@ -38,6 +38,10 @@ for i in range(9):
     pulseList.append(targetRate)
     intensity = round(intensity + .05,2)
 
-print(intensityList)
-print(pulseList)
+#print(intensityList)
+#print(pulseList)
 #TODO: Make a nice tabular list to show 
+table = PrettyTable()
+table.add_column("Intensity",intensityList)
+table.add_column("Rate",pulseList)
+print(table)
