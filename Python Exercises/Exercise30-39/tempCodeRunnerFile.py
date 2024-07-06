@@ -1,5 +1,5 @@
 import math
-import numpy as np
+from statistics import stdev
 
 def average(numbers):
     total = 0
@@ -10,21 +10,13 @@ def average(numbers):
     return avg
 
 def maximum(numbers):
-    largest = 1
-    for x in numbers:
-        if int(x) > largest:
-            largest = int(x)
-    return largest
+    return max(numbers)
 
 def minimum(numbers):
     return min(numbers)
 
 def std(numbers):
-    avg = average(numbers)
-    sq_diff = [(float(x) - avg) ** 2 for x in numbers] #this is wizardry
-    variance = sum(sq_diff) / (len(sq_diff))
-    stddev = variance ** 0.5
-    return stddev
+    return stdev(numbers)
 
 def validate(toAdd):
     try:
@@ -41,7 +33,7 @@ def printNumbers(numbers):
     print("The average is",average(numbers))
     print("the minimum is",minimum(numbers))
     print("the maximum is",maximum(numbers))
-    print("the standard deviation is",round(std(numbers),2))
+    #print("the standard deviation is",std(numbers))
 
 def toNumb(numbers):
     newNumb = []
@@ -50,16 +42,16 @@ def toNumb(numbers):
         newNumb.append(x)
     return newNumb
 
-hold = []
+numbers = []
 flag = False
 while flag == False:
     toAdd = input("Enter a number ")
     if toAdd == "done":
-        numbers = toNumb(hold)
+        numbers = toNumb(numbers)
         flag = True
     else: 
         number = validate(toAdd)
         if number != -1:
-            hold.append(number)
+            numbers.append(number)
 
 printNumbers(numbers)
