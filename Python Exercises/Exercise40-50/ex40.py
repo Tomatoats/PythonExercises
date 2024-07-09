@@ -14,8 +14,23 @@ def Person(num):
         case 4: return id4
         case 5: return id5
 
-def results(toFind):
-    pass
+def results(toFind, total,num):
+    numbers = []
+    toMake = []
+    for x in range(5):
+        listing = Person(x)
+        if any(toFind in word for word in listing):
+            numbers.append(x)
+        else:
+            numbers.append(-1)
+    for x in numbers:
+        if x != -1:
+            toMake.append(numbers.index(x))
+    print(numbers)
+    print(toMake)
+    refined = list(map(Person,toMake))
+    printTable(refined)
+    
 
 
 def printTable(total):
@@ -35,6 +50,6 @@ toFind = input("Enter a search string ")
 
 print("Results:")
 
-results(toFind,)
+results(toFind,total,num)
 
     
