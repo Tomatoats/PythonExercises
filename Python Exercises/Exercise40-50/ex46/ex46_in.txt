@@ -1,0 +1,3 @@
+JSON, short for JavaScript Object Notation, is an open standard. Although its name doesn’t imply so, it is a language-independent data format. With Python’s JSON library, we can read, write, and parse JSON to both store and exchange data using this versatile data format. It’s a prevalent data format because it is easy to read and write for humans as well, although not as easy as YAML!
+
+Working with JSON in Python is super easy! Python has two data types that, together, form the perfect tool for working with JSON in Python: dictionaries and lists. In this article, I’ll show you how to use the built-in Python JSON library. In addition, we’ll take a look at JSON5: an extension to JSON that allows things like comments inside your JSON documents.
